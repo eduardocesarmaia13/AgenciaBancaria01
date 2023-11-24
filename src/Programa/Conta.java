@@ -1,5 +1,7 @@
 package Programa;
 
+import Programa.utilitarios.Utils;
+
 public class Conta {
 
     private static int contadorDeContas = 1;
@@ -34,5 +36,15 @@ public class Conta {
     }
     public void setSaldo(Double saldo) {
         this.saldo = saldo;
+    }
+
+    public String toString() {
+        return "/nNúmero da conta: " + this.getNumeroConta() +
+                "/nNome: " + this.pessoa.getName() +
+                "/nCPF: " + this.pessoa.getCpf() +
+                "/nEmail: " + this.pessoa.getEmail() +
+                "/nSaldo: " + Utils.doubleToString(this.getSaldo()) +
+                "/n";
+
     }
 }
