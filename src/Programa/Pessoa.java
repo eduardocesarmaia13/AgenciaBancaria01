@@ -34,4 +34,10 @@ public class Pessoa {
         this.email = email;
     }
 
+    public String toString() {
+        return "/nNome:" + this.getName() +
+                "/nCPF:" + this.getCpf() +
+                "/nEmail:" + this.getEmail();
+    }
+
 }
