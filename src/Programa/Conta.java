@@ -47,4 +47,13 @@ public class Conta {
                 "/n";
 
     }
+
+    public void depositar (Double valor) {
+        if(valor > 0) {
+            setSaldo(getSaldo() + valor);
+            System.out.println("Seu depósito foi realizado com sucesso!");
+        }else {
+            System.out.println("Não foi possível realizar o depósito!");
+        }
+    }
 }
