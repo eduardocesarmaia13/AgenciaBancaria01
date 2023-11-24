@@ -26,5 +26,38 @@ public class AgenciaBancaria {
         System.out.println("|   Opção 4 - Transferir    |");
         System.out.println("|   Opção 5 - Listar        |");
         System.out.println("|   Opção 6 - Sair          |");
+
+        int operacao = input.nextInt();
+
+        switch (operacao) {
+            case 1:
+                criarConta();
+                break;
+
+            case 2:
+                depositar();
+                break;
+
+            case 3:
+                sacar();
+                break;
+
+            case 4:
+                transferir();
+                break;
+
+            case 5:
+                listarContas();
+                break;
+
+            case 6:
+                System.out.println("Flw é nóis!");
+                System.exit(0); // para o sistema
+
+            default:
+                System.out.println("Opção inválida!");
+                operacoes();
+                break;
+        }
     }
 }
