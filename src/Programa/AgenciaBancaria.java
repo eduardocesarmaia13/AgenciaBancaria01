@@ -111,11 +111,45 @@ public class AgenciaBancaria {
 
     public static void sacar() {
         System.out.println("Número da conta: ");
-        Double valorSaque = input.nextDouble();
-        conta.sacar(valorSaque);
-        System.out.println("Valor sacado com sucesso! ");
-    } else {
-        System.out.println(" Conta não encontrada!" );
+        int numeroConta = input.nextInt();
+
+        Conta conta = emcontrarConta(numeroConta);
+
+        if(conta != null) {
+            System.out.println("Qual o valor deseja sacar? ");
+            Double valorSaque = input.nextDouble();
+
+            conta.sacar(valorSaque);
+            System.out.println("---Saque realizado com sucesso! ---");
+        } else{
+            System.out.println("--- Conta não encontrada ---");
+        }
+        operacoes();
     }
-    operacoes();
+
+    public static void transferir() {
+        System.out.println("Número da conta que vai enviar a transferência: ");
+        int numeroContaRemetente = input.nextInt();
+
+        Conta contaRemetente = encontrarConta(numeroContaDestinatario);
+
+        if(contaRemetente != null) {
+            System.out.println("Número da conta do destinatário: ");
+            int numeroContaDestinatario = input.nextInt();
+
+            Conta contaDestinatario = encontrarConta(numeroContaDestinatario);
+
+            if(contaDestinatario != null) {
+                System.out.println("Valor da transferência: ");
+                Double valor = input.nextDouble();
+
+                contaRemetente.transferencia(contaDestinatario, valor);
+
+            }else{
+                System.out.println("---Conta para transferência não encontrada---");
+            }
+            operacoes();
+        }
+    }
+
 }
