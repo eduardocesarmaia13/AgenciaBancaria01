@@ -152,4 +152,16 @@ public class AgenciaBancaria {
         }
     }
 
+    public static void listarContas() {
+        if(contasBancarias.size() > 0) {
+            for (Conta conta: contasBancarias) {
+                System.out.println(conta);
+            }
+        } else {
+            System.out.println("--- Não há contas cadastradas ---");
+        }
+
+        operacoes();
+    }
+
 }
